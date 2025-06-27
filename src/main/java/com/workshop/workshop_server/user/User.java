@@ -1,4 +1,4 @@
-package com.workshop.workshop_server;
+package com.workshop.workshop_server.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
