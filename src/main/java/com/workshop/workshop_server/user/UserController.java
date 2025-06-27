@@ -32,12 +32,12 @@ public class UserController {
         return userServiceImpl.addUser(user);
     }
     
-    @PutMapping("users/{id}")
+    @PutMapping("/users/{id}")
     public User updataUser(@PathVariable Long id,@RequestBody User newUser) {
         return userServiceImpl.updateUser(id, newUser);
     }
 
-    @DeleteMapping("users/{id}")
+    @DeleteMapping("/users/{id}")
     public void deleteUser(Long id) {
         userServiceImpl.deleteUser(id);
     }
