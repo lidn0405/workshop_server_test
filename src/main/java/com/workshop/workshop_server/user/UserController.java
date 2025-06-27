@@ -16,35 +16,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class UserController {
 
     @Autowired
-    private UserServiceImpl userServiceImpl;
+    private UserService userService;
 
-    public UserController(UserServiceImpl userServiceImpl) {
-        this.userServiceImpl = userServiceImpl;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/users")
     public List<User> getUsers() {
-        return userServiceImpl.getUsers();
+        return userService.getUsers();
     }
 
     @PostMapping("/users")
     public User addUser(@RequestBody User user) {
-        return userServiceImpl.addUser(user);
+        return userService.addUser(user);
     }
     
     @PutMapping("/users/{id}")
     public User updataUser(@PathVariable Long id,@RequestBody User newUser) {
-        return userServiceImpl.updateUser(id, newUser);
+        return userService.updateUser(id, newUser);
     }
 
     @DeleteMapping("/users/{id}")
     public void deleteUser(Long id) {
-        userServiceImpl.deleteUser(id);
+        userService.deleteUser(id);
     }
 
     @GetMapping("/users/{id}")
     public User getMethodName(@PathVariable Long id) {
-        return userServiceImpl.getUser(id);
+        return userService.getUser(id);
     }
     
 }
