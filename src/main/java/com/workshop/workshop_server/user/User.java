@@ -13,13 +13,20 @@ public class User {
     @GeneratedValue
     private Long id;
     private String name;
+    private String email;
+    private String password;
+
 
     public User() {
-        this.name = "No Name";
+        this.name = "None";
+        this.email = "None";
+        this.password = "None";
     }
 
-    public User(String name) {
+    public User(String name, String email, String password) {
         this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -30,7 +37,25 @@ public class User {
         return this.name;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    // Figure out how to do security
+    public String getPassword() {
+        return this.password;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Figure out how to do security
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
